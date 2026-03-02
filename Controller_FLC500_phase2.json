@@ -1,0 +1,1887 @@
+{
+  "@context": "dtmi:dtdl:context;3",
+  "@id": "dtmi:com:bsbu:flc500;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "FLC500",
+    "ja": "エフエルシーごひゃく"
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "flcIoUnitConfigStatus",
+      "displayName": {
+        "en": "IO Unit Configuration Status",
+        "ja": "IOユニット構成状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Mismatch",
+              "ja": "不一致"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcBmuAcSupplyAlarm",
+      "displayName": {
+        "en": "BMU AC Supply Status",
+        "ja": "BMU AC供給状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "AC off",
+              "ja": "エアコンを切る"
+            },
+            "enumValue": 0
+          },
+          {
+            "name": {
+              "en": "AC on",
+              "ja": "エアコンをつける"
+            },
+            "enumValue": 1
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcBmuBatteryStatus",
+      "displayName": {
+        "en": "BMU Battery Status",
+        "ja": "BMU バッテリー状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not Connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcBmuBatteryTempAlarm",
+      "displayName": {
+        "en": "BMU Battery Temperature Monitoring Alarm",
+        "ja": "BMU バッテリー温度監視警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcPrimaryBatterVoltAlarm",
+      "displayName": {
+        "en": "Primary Battery Voltage Alarm",
+        "ja": "一次電池電圧警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcPrimaryBatterVoltRecovery",
+      "commandType": "recovery",
+      "displayName": {
+        "en": "Primary Battery Voltage Check",
+        "ja": "一次電池電圧チェック"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Check",
+                "ja": "確認"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "flcMainUnitMemoryAlarm",
+      "displayName": {
+        "en": "Main Unit (Memory Monitoring) Alarm",
+        "ja": "メインユニット（メモリ監視）警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "適正"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonHisBkAlarm",
+      "displayName": {
+        "en": "Data Monitoring (HIS_BK)",
+        "ja": "データ監視（HIS_BK）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonCardBkAlarm",
+      "displayName": {
+        "en": "Data Monitoring (CARD_BK)",
+        "ja": "データ監視（CARD_BK）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonVeinBkAlarm",
+      "displayName": {
+        "en": "Data Monitoring (VEIN_BK)",
+        "ja": "データ監視（VEIN_BK）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonDInfoAlarm",
+      "displayName": {
+        "en": "Data Monitoring (D_INFO)",
+        "ja": "データ監視（D_INFO）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonDSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (D_SCH)",
+        "ja": "データ監視（D_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcTamperErrorAlarm",
+      "displayName": {
+        "en": "Tamper error",
+        "ja": "タンパ異常"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcFireAlarmRecovery",
+      "commandType": "recovery",
+      "displayName": {
+        "en": "Fire alarm restoration control",
+        "ja": "火災復旧指令"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Restoration",
+                "ja": "復旧"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "flcFireAlarmRecoveryStatus",
+      "displayName": {
+        "en": "Fire alarm recovery status",
+        "ja": "火災復旧状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Failed/Abnormal",
+              "ja": "失敗/異常"
+            },
+            "enumValue": 2
+          },
+          {
+            "name": {
+              "en": "Restored/Completed",
+              "ja": "復旧/完了"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Idle/Normal",
+              "ja": "待機/正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot1IoUnitStatus",
+      "displayName": {
+        "en": "Slot1 IO unit connection status",
+        "ja": "Slot1_IOユニット接続状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot1IoUnitAlarm",
+      "displayName": {
+        "en": "Slot1 IO unit alarm",
+        "ja": "Slot1_IOユニット警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcConfigSync",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Master Configuration Sync",
+        "ja": "マスター構成の同期"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcSlot1IoUnitRecovery",
+      "commandType": "recovery",
+      "displayName": {
+        "en": "Slot1 IO unit reset",
+        "ja": "Slot1_IOユニットリセット"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Reset",
+                "ja": "再起動"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot2IoUnitStatus",
+      "displayName": {
+        "en": "Slot2 IO unit connection status",
+        "ja": "Slot2_IOユニット状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot2IoUnitAlarm",
+      "displayName": {
+        "en": "Slot2 IO unit alarm",
+        "ja": "Slot2_IOユニット警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcSlot2IoUnitRecovery",
+      "commandType": "recovery",
+      "displayName": {
+        "en": "Slot2 IO unit reset",
+        "ja": "Slot2_IOユニットリセット"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Reset",
+                "ja": "再起動"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot3IoUnitStatus",
+      "displayName": {
+        "en": "Slot3 IO unit connection status",
+        "ja": "Slot3_IOユニット状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot3IoUnitAlarm",
+      "displayName": {
+        "en": "Slot3 IO unit alarm",
+        "ja": "Slot3_IOユニット警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcSlot3IoUnitRecovery",
+      "commandType": "recovery",
+      "displayName": {
+        "en": "Slot3 IO unit reset",
+        "ja": "Slot3_IOユニットリセット"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Reset",
+                "ja": "再起動"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot4IoUnitStatus",
+      "displayName": {
+        "en": "Slot4 IO unit connection status",
+        "ja": "Slot4_IOユニット状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSlot4IoUnitAlarm",
+      "displayName": {
+        "en": "Slot4 IO unit alarm",
+        "ja": "Slot4_IOユニット警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcSlot4IoUnitRecovery",
+      "commandType": "recovery",
+      "displayName": {
+        "en": "Slot4 IO unit reset",
+        "ja": "Slot4_IOユニットリセット"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Reset",
+                "ja": "再起動"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonPSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (P_SCH)",
+        "ja": "データ監視（P_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonPPAlarm",
+      "displayName": {
+        "en": "Data Monitoring (PP)",
+        "ja": "データ監視（PP）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonElvAlarm",
+      "displayName": {
+        "en": "Data Monitoring (ELV)",
+        "ja": "データ監視（ELV）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonElvSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (ELV_SCH)",
+        "ja": "データ監視（ELV_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonAuthModeAlarm",
+      "displayName": {
+        "en": "Data Monitoring (AUTH_MODE)",
+        "ja": "データ監視（AUTH_MODE）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonAuthSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (AUTH_SCH)",
+        "ja": "データ監視（AUTH_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonKInfoAlarm",
+      "displayName": {
+        "en": "Data Monitoring (K_INFO)",
+        "ja": "データ監視（K_INFO）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonKSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (K_SCH)",
+        "ja": "データ監視（K_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonDPinAlarm",
+      "displayName": {
+        "en": "Data Monitoring (D_PIN)",
+        "ja": "データ監視（D_PIN）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonTurnbackSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (TURNBACK_SCH)",
+        "ja": "データ監視（TURNBACK_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonBacGrAlarm",
+      "displayName": {
+        "en": "Data Monitoring (BAC_Gr)",
+        "ja": "データ監視（BAC_Gr）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonBacCalAlarm",
+      "displayName": {
+        "en": "Data Monitoring (BAC_CAL)",
+        "ja": "データ監視（BAC_CAL）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonBacSchAlarm",
+      "displayName": {
+        "en": "Data Monitoring (BAC_SCH)",
+        "ja": "データ監視（BAC_SCH）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonBacRendoAlarm",
+      "displayName": {
+        "en": "Data Monitoring (BAC_Rendo)",
+        "ja": "データ監視（BAC_Rendo）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcDataMonBacFRendoAlarm",
+      "displayName": {
+        "en": "Data Monitoring (BAC_FRendo)",
+        "ja": "データ監視（BAC_FRendo）"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Property",
+      "name": "flcUsbSlot1Status",
+      "displayName": {
+        "en": "USB slot 1 status",
+        "ja": "USBスロット1状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcUsbSlot2Status",
+      "displayName": {
+        "en": "USB slot 2 status",
+        "ja": "USBスロット2状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSdCardSlotStatus",
+      "displayName": {
+        "en": "SD card slot status",
+        "ja": "SDカードスロット状態"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Connected",
+              "ja": "接続"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Not connected",
+              "ja": "未接続"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": false
+    },
+    {
+      "@type": "Property",
+      "name": "flcSdCardRegularBackupAlarm",
+      "displayName": {
+        "en": "SD card regular backup alarm",
+        "ja": "SDカード定期バックアップ警報"
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": {
+              "en": "Abnormal",
+              "ja": "異常"
+            },
+            "enumValue": 1
+          },
+          {
+            "name": {
+              "en": "Normal",
+              "ja": "正常"
+            },
+            "enumValue": 0
+          }
+        ]
+      },
+      "isPrimary": false,
+      "isAlarm": true
+    },
+    {
+      "@type": "Command",
+      "name": "flcSdCardFormatControl",
+      "commandType": "control",
+      "displayName": {
+        "en": "SD card format control",
+        "ja": "SDカードフォーマット制御"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Format",
+                "ja": "フォーマット"
+              },
+              "enumValue": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "flcRouteStateSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Route Control Enable/Disable",
+        "ja": "SDカードフォーマット制御"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "Enable",
+                "ja": "有効にする"
+              },
+              "enumValue": 1
+            },
+            {
+              "name": {
+                "en": "Disable",
+                "ja": "無効にする"
+              },
+              "enumValue": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "flcCredentialDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All Card Data",
+        "ja": "全カードデータ削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcCredentialDataSync",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Card Data Registration",
+        "ja": "カードデータ登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcCredentialDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete Card Data",
+        "ja": "カードデータ削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcTrafficPatternDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete Traffic Pattern All",
+        "ja": "全トラフィックパターン削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcTrafficPatternDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Access Profile",
+        "ja": "アクセスプロファイル"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcPassableDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All Passable Time Data",
+        "ja": "全通過可能時間データ削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcPassableDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Passable Time Data Registration",
+        "ja": "通過可能時間データ登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcElectricLockDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All Electric Lock Operation Pattern Data",
+        "ja": "全電気錠操作パターンデータ削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcElectricLockDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Electric Lock Operation Pattern Data Registration",
+        "ja": "電気錠操作パターンデータ登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDoorTempDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Door Temporary Schedule Registration",
+        "ja": "ドア一時スケジュール登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDoorTempDataGet",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Door Temporary Schedule Retrieval",
+        "ja": "ドア一時スケジュール取得"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcAuthModeDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All Authentication Schedule",
+        "ja": "全認証スケジュール削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcAuthModeDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Authentication Mode Schedule Registration",
+        "ja": "認証モードスケジュール登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcAuthModeTempSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Authentication Mode Temporary Schedule Registration",
+        "ja": "認証モード一時スケジュール登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcAuthModeTempFetch",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Authentication Mode Temporary Schedule Retrieval",
+        "ja": "認証モード一時スケジュール取得"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDoorMgmDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All Door Management Data",
+        "ja": "全ドア管理データ削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDoorMgmDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Door Management Data Registration",
+        "ja": "ドア管理データ登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcCalendarDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All Calendar",
+        "ja": "全カレンダー削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcCalendarSync",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Calendar Registration",
+        "ja": "カレンダー登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcRouteDataSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Route Data Registration",
+        "ja": "ルートデータ登録"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcRouteStateDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Clear All ID Route",
+        "ja": "全IDルート削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcRouteDataDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Clear Specified ID Route",
+        "ja": "指定IDルート削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcAuthModeSettingDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Delete All CR Information (Authentication schedule, sounding settings)",
+        "ja": "全CR情報削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcAuthModeSettingSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "CR Information (Authentication schedule, sounding setting) Setting",
+        "ja": "CR情報設定"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDeviceLinkageGroupSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Device Linkage Control Setting",
+        "ja": "デバイス連携制御設定"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDeviceLinkageGroupDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Device Linkage Control Setting Delete",
+        "ja": "デバイス連携制御設定削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcDeviceLinkageGroupDelAll",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Device Linkage Control Setting Delete All",
+        "ja": "全デバイス連携制御設定削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcFireLinkageGroupSyn",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Fire-Alarm Linkage Control Setting",
+        "ja": "火災報知機連携制御設定"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcFireLinkageGroupDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Fire-Alarm Linkage Control Setting Delete",
+        "ja": "火災報知機連携制御設定削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcFireLinkageGroupDelAll",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Fire-Alarm Linkage Control Setting Delete All",
+        "ja": "全火災報知機連携制御設定削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "flcForceSync",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Force Sync",
+        "ja": "強制同期"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "facilityGroupSync",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Facility Group Sync",
+        "ja": "施設グループの同期"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "facilityGroupDel",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Facility Group Delete",
+        "ja": "施設グループの削除"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "facilityExeSchSync",
+      "commandType": "sync",
+      "displayName": {
+        "en": "Execution Schedule Sync",
+        "ja": "実行スケジュールの同期"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "maintenanceModeAllowed": true,
+      "request": {}
+    },
+    {
+      "@type": "Command",
+      "name": "maintenanceModeFLC500",
+      "commandType": "maintenance",
+      "displayName": {
+        "en": "Maintenance Mode",
+        "ja": "メンテナンスモード"
+      },
+      "isGlobal": false,
+      "retryEnabled": true,
+      "request": {
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": {
+                "en": "On",
+                "ja": "ON"
+              },
+              "enumValue": 1
+            },
+            {
+              "name": {
+                "en": "Off",
+                "ja": "OFF"
+              },
+              "enumValue": 0
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
