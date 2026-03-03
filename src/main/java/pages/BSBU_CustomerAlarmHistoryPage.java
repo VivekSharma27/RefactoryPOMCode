@@ -223,16 +223,18 @@ public class BSBU_CustomerAlarmHistoryPage extends BasePage {
 
 	    // 🔹 Click first page
 	    waitUtils.waitAndClick(clickFiletr);
+	    waitUtils.waitForMillis(500);
 
 	    // 🔹 Clear Acknowledged
 	    trackStep("Clear Acknowledged status");
 	    waitUtils.waitAndClick(deleteStatusButton);
 	    endStep();
-
+	    waitUtils.waitForMillis(500);
 	    // 🔹 Clear In-Progress
 	    trackStep("Clear In-Progress status");
 	    waitUtils.waitAndClick(deleteStatusButton);
 	    endStep();
+	    waitUtils.waitForMillis(500);
 
 	    // 🔹 Clear Resolved
 	    trackStep("Clear Resolved status");
