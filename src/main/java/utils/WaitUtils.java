@@ -8,8 +8,10 @@ import java.util.List;
 
 public class WaitUtils {
 	private WebDriverWait wait;
+	private WebDriver driver;
 
 	public WaitUtils(WebDriver driver, int timeoutSeconds) {
+		this.driver=driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
 	}
 
@@ -21,6 +23,16 @@ public class WaitUtils {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
+	public WebElement waitForElementVisible(WebElement element, int timeoutSeconds) {
+	    WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+	    return customWait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public WebElement waitForElementVisible(By locator, int timeoutSeconds) {
+	    WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+	    return customWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
 	public WebElement waitForElementClickable(WebElement element) {
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
@@ -32,6 +44,7 @@ public class WaitUtils {
 	public boolean waitForElementToBeInvisible(WebElement element) {
 		return wait.until(ExpectedConditions.invisibilityOf(element));
 	}
+	
 
 	public WebElement waitAndClick(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));

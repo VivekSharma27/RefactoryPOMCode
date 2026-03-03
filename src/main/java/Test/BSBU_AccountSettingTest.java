@@ -50,7 +50,9 @@ public class BSBU_AccountSettingTest extends BaseTest {
         accountSettingAdminLinkagePage = new BSBU_AccountSetting_AdminLinkagePage(driver);
 
         accountSettingPage.openAccountManagement();
+        
         String accountName = accountSettingPage.getAccountName();
+        
 //      accountSettingPage.searchAccount(accountName);  // use for dynamic account search from config file
         accountSettingPage.searchAccount("Performance Account Web11");  // use for static account search
 //        accountSettingPage.openCustomerPortal();

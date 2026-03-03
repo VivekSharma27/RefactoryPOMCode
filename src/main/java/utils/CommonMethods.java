@@ -1,5 +1,8 @@
 package utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class CommonMethods {
@@ -33,6 +36,16 @@ public class CommonMethods {
                    random.nextInt(256) + "." +
                    random.nextInt(256) + "." +
                    random.nextInt(256);
+        }
+        
+        public static String getCurrentDate() {
+            return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        }
+
+        public static String getFutureDate(int daysToAdd) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.DAY_OF_MONTH, daysToAdd);
+            return new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
         }
     
 }
