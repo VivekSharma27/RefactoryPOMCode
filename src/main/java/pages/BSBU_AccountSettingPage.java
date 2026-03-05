@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.CommonMethods;
 
 public class BSBU_AccountSettingPage extends BasePage {
-	
+
 	public String mainWindow;
 
 	private Actions actions;
@@ -26,8 +26,6 @@ public class BSBU_AccountSettingPage extends BasePage {
 		this.actions = new Actions(driver);
 	}
 
-	
-	
 	@FindBy(xpath = "(//div[.='Account Management'])[1]")
 	private WebElement accountManagementMenu;
 
@@ -57,7 +55,7 @@ public class BSBU_AccountSettingPage extends BasePage {
 //
 //	@FindBy(xpath = "//div[contains(text(),'Perf')]")
 //	private WebElement performanceAccountName;
-	
+
 	@FindBy(xpath = "//tbody/tr/td[3]/span/div")
 	private WebElement performanceAccountLink;
 
@@ -487,8 +485,8 @@ public class BSBU_AccountSettingPage extends BasePage {
 	@FindBy(xpath = "//span[.='Cancel']")
 	private WebElement cancelButton;
 
-	    @FindBy(xpath = "//span[.='Back to Account']")
-	    private WebElement backtoAccountButton;
+	@FindBy(xpath = "//span[.='Back to Account']")
+	private WebElement backtoAccountButton;
 //
 //	    @FindBy(xpath = "//button[.=' Account Settings ']")
 //	    private WebElement accountSettingsButton;
@@ -727,7 +725,6 @@ public class BSBU_AccountSettingPage extends BasePage {
 //    @FindBy(xpath = "//span[.='Confirm']")
 //    WebElement confirmDeleteButton;
 
-	
 	public void openAccountManagement() {
 		waitUtils.waitForElementClickable(accountManagementLink).click();
 
