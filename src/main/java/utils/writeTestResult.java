@@ -2,6 +2,8 @@ package utils;
 
 import java.io.*;
 import java.util.*;
+
+import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -10,6 +12,10 @@ public class writeTestResult {
 
     public void writeResults(String testName, HashMap<String, String> results,
                              HashMap<String, String> stepName) throws Exception {
+    	
+    	int threadNum = JMeterContextService.getContext().getThreadNum();
+    	
+    	Thread.sleep((threadNum+1)*1500);
 
         String filePath = System.getProperty("user.dir") + "\\OutputResults\\" + testName + "_AdminPortal.xlsx";
         File file = new File(filePath);
@@ -42,7 +48,7 @@ public class writeTestResult {
 
         // Results Row
         List<String> outputResults = new ArrayList<>();
-        outputResults.add("User" + Thread.currentThread().getId());
+        outputResults.add("User_" + (threadNum + 1));
         for (int i = 1; i <= numberOfSteps; i++)
             outputResults.add(results.getOrDefault(testName + "_" + i, "0"));
 

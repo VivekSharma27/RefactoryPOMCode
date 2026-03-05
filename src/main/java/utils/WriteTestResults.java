@@ -2,6 +2,7 @@ package utils;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.poi.EncryptedDocumentException;
 import java.io.*;
 import java.util.ArrayList;
@@ -11,6 +12,10 @@ public class WriteTestResults {
 
     public void writeResults(String testName,int numberOfSteps,  HashMap<String, String> results,
                              HashMap<String, String> stepName) throws InterruptedException, IOException, EncryptedDocumentException {
+    	
+    	int threadNum = JMeterContextService.getContext().getThreadNum();
+    	
+    	Thread.sleep(threadNum *1500);
 
         String filePath = System.getProperty("user.dir") + "\\OutputResults\\" + testName + ".xlsx";
         File file = new File(filePath);
@@ -47,7 +52,7 @@ public class WriteTestResults {
 
         // Write results
         Row resultRow = sheet.createRow(2);
-        resultRow.createCell(0).setCellValue("User" + (Thread.currentThread().getId()));
+        resultRow.createCell(0).setCellValue("User" + ( threadNum +1 ));
         for (int i = 0; i <= numberOfSteps; i++) {
             resultRow.createCell(i + 1).setCellValue(results.getOrDefault(testName + "_" + i, "0"));
         }
